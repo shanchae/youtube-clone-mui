@@ -1,8 +1,8 @@
-import { Typography, Box, Stack} from '@mui/material'
+import { Typography, Box } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { fetchFromAPI } from '../utils/fetchFromAPI'
-import { Videos, SideBar } from './index'
+import { Videos  } from './index'
 
 function SearchFeed() {
   const [videos, setVideos] = useState([])
@@ -14,13 +14,7 @@ function SearchFeed() {
   }, [searchTerm])
 
   return (
-    <Stack sx={{ flexDirection: { sx: "column", md: "row"}}}>
-    <Box sx={{ height: { sx:'auto', md: '92vh', px:{sx: 0, md:2 }}}}>
-      <SideBar/>
-      <Typography className='copyright' variant='body2' sx={{ mt: 1.5, color: '#fff'}}>
-        Copyright 2022
-      </Typography>
-    </Box>
+    
 
     <Box
       p={2}
@@ -31,7 +25,7 @@ function SearchFeed() {
       </Typography>
       <Videos videos={videos}/>
     </Box>
-  </Stack>
+
     
   )
 }

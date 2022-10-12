@@ -2,11 +2,11 @@ import { Stack, Box } from '@mui/system'
 import React from 'react'
 import {ChannelCard, VideoCard} from './index'
 
-function Videos({ videos }) {
-    console.log(videos)
+function Videos({ videos, direction }) {
+    if(!videos?.length) return 'Loading...'
   return (
     <Stack
-        direction='row'
+        direction={direction || 'row'}
         flexWrap='wrap'
         justifyContent='start'
         alignItems='start'

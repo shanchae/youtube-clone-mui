@@ -4,10 +4,11 @@ import { fetchFromAPI } from '../utils/fetchFromAPI'
 import {SideBar, Videos} from './index'
 
 function Feed() {
-  const [selectedCategory, setSelectedCategory] = useState('JS Mastery')
-  const [videos, setVideos] = useState([])
+  const [selectedCategory, setSelectedCategory] = useState('New')
+  const [videos, setVideos] = useState(null)
 
   useEffect(() => {
+    setVideos(null)
 
     fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) => setVideos(data.items))
   }, [selectedCategory])
